@@ -6,6 +6,7 @@ public class ruch : MonoBehaviour
 {
 
     Rigidbody2D rg2d;
+    public float speed;
 
     void Start()
     {
@@ -21,8 +22,8 @@ public class ruch : MonoBehaviour
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
-        Vector2 movement = new Vector2(moveVertical, moveHorizontal);
-        rg2d.AddForce(movement);
+        Vector2 movement = new Vector2(moveHorizontal, moveVertical);
+        rg2d.AddForce(movement*speed);
     }
 
 }
