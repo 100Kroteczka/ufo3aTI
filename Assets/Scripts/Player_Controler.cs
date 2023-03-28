@@ -9,20 +9,15 @@ public class Player_Controler : MonoBehaviour
     public float speed;
     int Score;
     public Text scoreText;
-    public Text win;
     void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
-        Score = 0;
-        win.enabled = false;
+        Score = 1;
     }
 
     void Update()
     {
-     if (Score == 7)
-        {
-         UpdateWin();
-        } 
+        
     }
 
     private void FixedUpdate()
@@ -47,12 +42,10 @@ public class Player_Controler : MonoBehaviour
     void UpdateScore()
     {
         scoreText.text = $"Score: {Score.ToString()}";
-    
+        if (true)
+        {
+
+        }
+        //winText.gameObject.setActivve(true);
     }
-    void UpdateWin()
-    {
-        win.enabled = true;
-        scoreText.enabled = false;
-    }
-    
 }
